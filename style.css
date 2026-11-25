@@ -1,0 +1,268 @@
+/* ==========================================================================
+   Cawffe — menu site
+   Palette: Espresso Cream
+   ========================================================================== */
+
+:root {
+  /* Palette */
+  --bg: #F6EFE6;
+  --surface: #EADFCF;
+  --ink: #2B1B12;
+  --muted: #6E5A4C;
+  --accent: #8A4B2A;
+  --line: #D6C5AE;
+  --active-bg: #2B1B12;
+  --active-text: #F6EFE6;
+
+  /* Type */
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-display: 'Fraunces', Georgia, serif;
+
+  /* Layout */
+  --max-width: 1200px;
+  --gutter: 24px;
+}
+
+/* ---------- Base ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 28px;
+  padding-bottom: 8px;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.header-label {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ---------- Category navigation ---------- */
+
+.cat-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 16px;
+  padding-bottom: 8px;
+}
+
+.cat-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 20px;
+  border: 1.5px solid var(--line);
+  border-radius: 22px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.cat-link:hover {
+  border-color: var(--muted);
+}
+
+.cat-link.is-active {
+  background: var(--active-bg);
+  border-color: var(--active-bg);
+  color: var(--active-text);
+}
+
+/* ---------- Category ---------- */
+
+.category {
+  padding-top: 56px;
+  padding-bottom: 96px;
+}
+
+.category-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 24px;
+  margin-bottom: 0;
+  border-bottom: 2px solid var(--ink);
+}
+
+.category-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(40px, 7vw, 84px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -1px;
+}
+
+.category-meta {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+/* ---------- Items ---------- */
+
+.items {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  column-width: 440px;
+  column-gap: 72px;
+}
+
+.item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+  break-inside: avoid;
+}
+
+.item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.item-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.item-note {
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.star {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  fill: var(--accent);
+}
+
+.price {
+  white-space: nowrap;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.currency {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  background: var(--surface);
+  padding: 56px 0;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 32px 64px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-wordmark {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.footer-tagline {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.footer-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px 56px;
+  font-size: 16px;
+}
+
+.footer-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
